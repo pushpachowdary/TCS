@@ -1,0 +1,16 @@
+pipeline { 
+    agent any 
+    stages {
+        stage('checkout') { 
+            steps { 
+                sh 'checkout scm' 
+            }
+        }
+        stage('build'){
+            steps {
+                sh '${MAVEN-HOME} /bin/mvn install'
+                sh '/usr/bin/mvn /bin/mvn install'       
+                }
+        }
+        }
+}
